@@ -6,9 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 public class SingleLinkedListUtil {
 
     public static <T> void printList(ListNode<T> head) {
+        System.out.println(toString(head));
+    }
+
+    public static <T> String toString(ListNode<T> head) {
         if(head == null) {
-            System.out.println("****** Empty list *******");
-            return;
+            return "null";
         }
 
         StringBuilder sb = new StringBuilder("[ ");
@@ -17,7 +20,7 @@ public class SingleLinkedListUtil {
             head = head.getNext();
         }
         sb.append("null ]");
-        System.out.println(sb.toString());
+        return sb.toString();
     }
 
     public static <T> ListNode<T> createList(T... vals) {
